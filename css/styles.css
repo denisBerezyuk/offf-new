@@ -32,7 +32,7 @@
 	--transition-duration: 0.2s;
 
 	--container-width: 1200px;
-	--container-padding-x: 26px;
+	--container-padding-x: 29px;
 
 	--container-fluid-width: 1440px;
 
@@ -96,55 +96,126 @@ button {
 	text-align: right;
 }
 
-.description * > :first-child {
+.description *:first-child {
 	margin-top: 0;
 }
 
-.description * > :last-child {
+.description *:last-child {
 	margin-bottom: 0;
 }
 
-.button {
-	--bg: var(--color-yellow);
-
-	position: relative;
-	text-decoration: none;
-	transition: scale var(--transition-duration);
+.description :is(h1, h2, h3, h4, h5, h6) {
+	margin-block: 62px 35px;
+	line-height: 1.5;
+	color: var(--color-beige);
 }
 
-.button span {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 51px;
-	background-color: var(--bg);
-	font-family: var(--font-family-el-camino-caps);
+.description h1 {
+	font-size: 28px;
+}
+
+.description h2 {
+	font-size: 26px;
+}
+
+.description h3 {
+	font-size: 24px;
+}
+
+.description h4 {
+	font-size: 22px;
+}
+
+.description h5 {
 	font-size: 20px;
+}
+
+.description h6 {
+	font-size: 18px;
+}
+
+.description :is(p, ul) {
+	margin-block: 28px;
+}
+
+.description a {
+	color: var(--color-yellow);
+}
+
+.title {
+	font-family: var(--font-family-el-camino-soft-edges-caps);
+	font-size: 60px;
 	line-height: 1;
-	border-radius: 24px;
+	text-align: center;
+	color: var(--color-yellow);
 }
 
-.button > svg {
-	position: absolute;
-	top: -15px;
-	right: -12px;
+.title-secondary {
+	font-size: 70px;
+	letter-spacing: -0.07em;
+	text-align: center;
+	color: var(--color-beige);
 }
 
-.button > svg {
-	color: var(--bg);
-}
-
-.main {
+.section {
+	background-image: url(--bgJpgUrl);
+	background-image: -webkit-image-set(
+		var(--bgWebpUrl) type('image/webp'),
+		var(--bgJpgUrl) type('image/jpeg')
+	);
 	background-image: image-set(
 		var(--bgWebpUrl) type('image/webp'),
 		var(--bgJpgUrl) type('image/jpeg')
 	);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top right;
+	background-position: top center;
+}
+
+.section:not(:last-child) {
+	border-bottom: var(--border);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.card__media {
+	overflow: hidden;
+	order: -1;
+	width: 100%;
+	aspect-ratio: 1;
+	margin-bottom: 32px;
+	background-color: var(--color-gray);
+	border-radius: 60px;
+}
+
+.card__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card__header {
+	margin-bottom: 30px;
+}
+
+.card__title {
+	font-size: 17px;
+	letter-spacing: -0.15em;
+}
+
+.card__button {
+	padding: 15px 26px;
+	font-family: var(--font-family-el-camino-soft-edges-caps);
+	font-size: 20px;
+	line-height: 1;
+	text-decoration: none;
+	background-color: var(--color-yellow);
+	border-radius: 30px;
+	transition: opacity var(--transition-duration);
 }
 
 /* page chefs */
@@ -184,6 +255,7 @@ button {
 	display: flex;
 	flex-direction: column;
 	row-gap: 73px;
+	background-position: top -140px right;
 }
 
 .meet__header {
@@ -191,13 +263,6 @@ button {
 	flex-direction: column;
 	row-gap: 13px;
 	text-align: center;
-}
-
-.meet__title {
-	font-family: var(--font-family-el-camino-soft-edges-caps);
-	font-size: 60px;
-	line-height: 1;
-	color: var(--color-yellow);
 }
 
 .meet__description {
@@ -218,12 +283,11 @@ button {
 }
 
 .card-person__inner {
+	--container-width: 1035px;
+
 	display: flex;
 	align-items: center;
 	column-gap: 66px;
-	max-width: calc(1035px + var(--container-padding-x) * 2);
-	padding-inline: var(--container-padding-x);
-	margin-inline: auto;
 	padding-block: 32px;
 }
 
@@ -266,13 +330,76 @@ button {
 	transition: scale var(--transition-duration);
 }
 
+/* faq */
+
+.faq {
+	padding-bottom: 120px;
+}
+
+.faq__inner {
+	--container-width: 1025px;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 169px;
+}
+
+/* section "Meet the celebrity Chefs" */
+
+.celebrity-chefs {
+	padding-block: 90px 100px;
+}
+
+.celebrity-chefs__inner {
+	--container-width: 1346px;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 78px;
+}
+
+.celebrity-chefs__title {
+	padding-inline: 80px;
+	text-wrap: balance;
+}
+
+.celebrity-chefs__list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	align-items: start;
+	gap: 48px 24px;
+}
+
+.video {
+	padding-block: 105px 117px;
+}
+
+.video__inner {
+	--container-width: 1141px;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 54px;
+}
+
+.video__body iframe {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
+
+/* footer */
+
 .footer {
+	padding-block: 26px 29px;
+	border-top: var(--border);
+}
+
+.footer__inner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	column-gap: 16px;
-	padding-block: 26px 29px;
-	border-top: var(--border);
 }
 
 .footer__description {
@@ -293,6 +420,8 @@ button {
 	transition: color var(--transition-duration);
 }
 
+/* media */
+
 @media (any-hover: hover) {
 	.soc1al-list__link:hover {
 		color: var(--color-orange);
@@ -300,6 +429,10 @@ button {
 
 	.card-person__social-link[href]:not([href='']):not([href='/']):hover svg {
 		scale: 1.05;
+	}
+
+	.card__button:hover {
+		opacity: 0.8;
 	}
 }
 
@@ -311,6 +444,10 @@ button {
 	.card-person__social-link[href]:not([href='']):not([href='/']):active svg {
 		scale: 1.05;
 	}
+
+	.card__button:active {
+		opacity: 0.8;
+	}
 }
 
 @media (max-width: 1280px) {
@@ -318,9 +455,21 @@ button {
 	.buy__item:nth-last-child(1) {
 		display: none;
 	}
+
+	.celebrity-chefs__list {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
 @media (max-width: 1024px) {
+	.title {
+		font-size: 48px;
+	}
+
+	.title-secondary {
+		font-size: 54px;
+	}
+
 	.buy {
 		margin-bottom: 60px;
 	}
@@ -331,10 +480,6 @@ button {
 
 	.meet {
 		row-gap: 63px;
-	}
-
-	.meet__title {
-		font-size: 48px;
 	}
 
 	.meet__description {
@@ -357,11 +502,39 @@ button {
 		font-size: 14px;
 		line-height: 22px;
 	}
+
+	.faq__inner {
+		row-gap: 169px;
+	}
+
+	.celebrity-chefs__title {
+		padding-inline: 15px;
+	}
+
+	.celebrity-chefs__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 @media (max-width: 767px) {
-	.main {
+	.bg {
 		background-position: bottom left;
+	}
+
+	.section {
+		background-position: bottom left;
+	}
+
+	.section--bg-mobile-hidden {
+		background-image: none;
+	}
+
+	.title {
+		font-size: 32px;
+	}
+
+	.title-secondary {
+		font-size: 36px;
 	}
 
 	.buy__list {
@@ -372,12 +545,12 @@ button {
 		display: none;
 	}
 
-	.meet__header {
-		row-gap: 29px;
+	.meet {
+		background-position: bottom -140px center;
 	}
 
-	.meet__title {
-		font-size: 32px;
+	.meet__header {
+		row-gap: 29px;
 	}
 
 	.meet__description {
@@ -400,8 +573,49 @@ button {
 		font-size: 12px;
 	}
 
+	.faq {
+		padding-bottom: 80px;
+	}
+
+	.faq__inner {
+		row-gap: 43px;
+	}
+
+	.description :is(h1, h2, h3, h4, h5, h6) {
+		margin-block: 68px 20px;
+		font-size: 20px;
+	}
+
+	.description :is(p, ul) {
+		margin-block: 10px;
+	}
+
+	.description p {
+		font-size: 12px;
+	}
+
+	.celebrity-chefs {
+		padding-block: 45px 71px;
+	}
+
+	.celebrity-chefs__inner {
+		row-gap: 75px;
+	}
+
+	.celebrity-chefs__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.video {
+		padding-block: 62px 58px;
+		background-position: bottom right;
+	}
+
 	.footer {
 		padding: 59px;
+	}
+
+	.footer__inner {
 		flex-direction: column;
 		row-gap: 43px;
 	}
@@ -412,11 +626,36 @@ button {
 }
 
 @media (max-width: 567px) {
+	.title-secondary {
+		font-size: 24px;
+	}
+
 	.buy__item:nth-last-child(5) {
 		display: none;
 	}
 
 	.card-person__inner {
 		padding-inline: 50px;
+	}
+
+	.celebrity-chefs__inner {
+		--container-padding-x: 60px;
+	}
+
+	.celebrity-chefs__title {
+		padding-inline: 0;
+	}
+
+	.celebrity-chefs__list {
+		grid-template-columns: 1fr;
+	}
+
+	.card__media {
+		margin-bottom: 23px;
+		aspect-ratio: 0.845;
+	}
+
+	.card__header {
+		margin-bottom: 26px;
 	}
 }
