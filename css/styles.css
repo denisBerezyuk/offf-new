@@ -158,7 +158,7 @@ button {
 }
 
 .section {
-	background-image: url(--bgJpgUrl);
+	background-image: var(--bgJpgUrl);
 	background-image: -webkit-image-set(
 		var(--bgWebpUrl) type('image/webp'),
 		var(--bgJpgUrl) type('image/jpeg')
