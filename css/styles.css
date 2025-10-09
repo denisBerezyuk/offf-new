@@ -4,7 +4,7 @@
 		url('./../fonts/COWBOY-Regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
+	font-display: fallback;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
 		url('./../fonts/ElCamino-SoftEdgesCaps.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
-	font-display: swap;
+	font-display: fallback;
 }
 
 :root {
@@ -25,9 +25,9 @@
 	--color-orange: #ea5a23;
 	--color-beige: #ecddc0;
 
-	--font-family-cowboy: 'COWBOY', sans-serif;
+	--font-family-cowboy: 'COWBOY', 'Impact', 'Arial Black', sans-serif;
 	--font-family-el-camino-soft-edges-caps: 'El Camino Soft Edges Caps',
-		sans-serif;
+		'Arial Rounded MT Bold', sans-serif;
 
 	--transition-duration: 0.2s;
 
@@ -221,7 +221,7 @@ button {
 	display: flex;
 	align-items: center;
 	column-gap: 66px;
-	max-width: 1035px;
+	max-width: calc(1035px + var(--container-padding-x) * 2);
 	padding-inline: var(--container-padding-x);
 	margin-inline: auto;
 	padding-block: 32px;
