@@ -159,13 +159,10 @@ button {
 
 .section {
 	background-image: var(--bgJpgUrl);
-
-	@supports (background-image: image-set(url('x') type('image/webp'))) {
-		background-image: image-set(
-			var(--bgWebpUrl) type('image/webp'),
-			var(--bgJpgUrl) type('image/jpeg')
-		);
-	}
+	background-image: image-set(
+		var(--bgWebpUrl) type('image/webp'),
+		var(--bgJpgUrl) type('image/jpeg')
+	);
 
 	background-repeat: no-repeat;
 	background-size: cover;
