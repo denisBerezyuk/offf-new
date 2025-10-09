@@ -229,8 +229,9 @@ button {
 
 .card-person__media {
 	overflow: hidden;
-	width: min(100%, 415px);
-	aspect-ratio: 1.08;
+	max-width: 415px;
+	width: 100%;
+	aspect-ratio: 1.083;
 	border-radius: 60px;
 	background-color: var(--color-gray);
 }
