@@ -355,6 +355,7 @@ button {
 
 	.card-person__description {
 		font-size: 14px;
+		line-height: 22px;
 	}
 }
 
@@ -369,6 +370,10 @@ button {
 
 	.buy__item:nth-last-child(4) {
 		display: none;
+	}
+
+	.meet__header {
+		row-gap: 29px;
 	}
 
 	.meet__title {
