@@ -147,27 +147,53 @@
 					</div>
 				</div>
 			</section>
-			<section class="countdown section" aria-labelledby="dacountdownte-title">
-				<h2 class="visually-hidden" id="countdown-title">
-					Before the start of the event, there are:
-				</h2>
-				<time class="visually-hidden" datetime="2025-11-08T00:00:00Z"></time>
-				<div class="countdown__timer" role="timer" aria-live="off">
-					<div class="countdown__item">
-						<span class="countdown__number">00</span>
-						<span class="countdown__label">Days</span>
-					</div>
-					<div class="countdown__item">
-						<span class="countdown__number">00</span>
-						<span class="countdown__label">HOurs</span>
-					</div>
-					<div class="countdown__item">
-						<span class="countdown__number">00</span>
-						<span class="countdown__label">Minutes</span>
-					</div>
-					<div class="countdown__item">
-						<span class="countdown__number">00</span>
-						<span class="countdown__label">Seconds</span>
+			<section
+				class="countdown section"
+				style="--bg: url(./../images/countdown-bg.png)"
+				aria-labelledby="dacountdownte-title"
+			>
+				<div class="countdown__inner container">
+					<h2 class="visually-hidden" id="countdown-title">
+						Before the start of the event, there are:
+					</h2>
+					<time class="visually-hidden" datetime="2025-11-08T00:00:00Z"></time>
+					<div
+						class="countdown__timer"
+						role="timer"
+						aria-live="off"
+						data-js-timer="2025-11-08"
+					>
+						<div class="countdown__item">
+							<span class="countdown__value" data-js-timer-days>00</span>
+							<span class="countdown__label">Days</span>
+						</div>
+						<div class="countdown__item">
+							<span class="countdown__value countdown__value--min-width"
+								>:</span
+							>
+						</div>
+						<div class="countdown__item">
+							<span class="countdown__value" data-js-timer-hours>00</span>
+							<span class="countdown__label">Hours</span>
+						</div>
+						<div class="countdown__item">
+							<span class="countdown__value countdown__value--min-width"
+								>:</span
+							>
+						</div>
+						<div class="countdown__item">
+							<span class="countdown__value" data-js-timer-minutes>00</span>
+							<span class="countdown__label">Minutes</span>
+						</div>
+						<div class="countdown__item">
+							<span class="countdown__value countdown__value--min-width"
+								>:</span
+							>
+						</div>
+						<div class="countdown__item">
+							<span class="countdown__value" data-js-timer-seconds>00</span>
+							<span class="countdown__label">Seconds</span>
+						</div>
 					</div>
 				</div>
 			</section>

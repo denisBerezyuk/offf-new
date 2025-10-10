@@ -24,6 +24,7 @@
 	--color-tomato-light: #de523b;
 	--color-orange: #ea5a23;
 	--color-beige: #ecddc0;
+	--color-red: #e93e28;
 
 	--font-family-cowboy: 'COWBOY', 'Impact', 'Arial Black', sans-serif;
 	--font-family-el-camino-soft-edges-caps: 'El Camino Soft Edges Caps',
@@ -363,6 +364,8 @@ button {
 	gap: 48px 24px;
 }
 
+/* section: "Throwback to 24’" */
+
 .video {
 	padding-block: 105px 117px;
 }
@@ -379,6 +382,44 @@ button {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16 / 9;
+}
+
+/* section: countdown */
+
+.countdown {
+	padding-block: 40px 28px;
+}
+
+.countdown__timer {
+	display: flex;
+	align-items: start;
+	justify-content: center;
+}
+
+.countdown__item {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+.countdown__value {
+	width: 2ch;
+	font-size: 80px;
+	letter-spacing: -0.14em;
+	line-height: 1;
+	text-align: center;
+	color: var(--color-red);
+}
+
+.countdown__value--min-width {
+	width: min-content;
+}
+
+.countdown__label {
+	font-size: 18px;
+	letter-spacing: -0.2em;
+	color: var(--color-beige);
 }
 
 /* footer */
@@ -507,6 +548,10 @@ button {
 	.celebrity-chefs__list {
 		grid-template-columns: repeat(3, 1fr);
 	}
+
+	.countdown__value {
+		font-size: 70px;
+	}
 }
 
 @media (max-width: 767px) {
@@ -604,6 +649,18 @@ button {
 		background-position: bottom right;
 	}
 
+	.countdown {
+		padding-block: 22px 18px;
+	}
+
+	.countdown__value {
+		font-size: 58px;
+	}
+
+	.countdown__label {
+		font-size: 14px;
+	}
+
 	.footer {
 		padding: 59px;
 	}
@@ -650,5 +707,17 @@ button {
 
 	.card__header {
 		margin-bottom: 26px;
+	}
+
+	.countdown__item {
+		row-gap: 4px;
+	}
+
+	.countdown__value {
+		font-size: 40px;
+	}
+
+	.countdown__label {
+		font-size: 10px;
 	}
 }
