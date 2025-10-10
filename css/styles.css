@@ -154,6 +154,7 @@ button {
 .title-secondary {
 	font-size: 70px;
 	letter-spacing: -0.07em;
+	line-height: 1;
 	text-align: center;
 	color: var(--color-beige);
 }
