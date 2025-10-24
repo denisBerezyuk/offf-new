@@ -159,6 +159,36 @@ button {
 	color: var(--color-beige);
 }
 
+.button-fire {
+	position: relative;
+	width: fit-content;
+	text-decoration: none;
+	transition: scale var(--transition-duration);
+}
+
+.button-fire span {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 51px;
+	padding-inline: 20px;
+	background-color: var(--color-yellow);
+	font-family: var(--font-family-el-camino-soft-edges-caps);
+	font-size: 20px;
+	line-height: 1;
+	border-radius: 24px;
+}
+
+.button-fire > svg {
+	position: absolute;
+	top: -15px;
+	right: -12px;
+	color: var(--color-yellow);
+}
+
 .section {
 	background-image: var(--bg);
 
@@ -455,6 +485,42 @@ button {
 	transition: color var(--transition-duration);
 }
 
+/* register-now */
+
+.register-now {
+	padding-block: 100px 66px;
+	text-align: center;
+}
+
+:is(.register-now__inner, .register-now__header, .register-now__body) {
+	display: flex;
+	flex-direction: column;
+}
+
+.register-now__inner {
+	row-gap: 18px;
+}
+
+.register-now__header {
+	row-gap: 36px;
+}
+
+.register-now__description {
+	font-size: 24px;
+	color: var(--color-beige);
+}
+
+.register-now__body {
+	align-items: center;
+	row-gap: 52px;
+}
+
+.register-now__subtitle {
+	font-family: var(--font-family-el-camino-soft-edges-caps);
+	font-size: 32px;
+	color: var(--color-yellow);
+}
+
 /* media */
 
 @media (any-hover: hover) {
@@ -462,7 +528,8 @@ button {
 		color: var(--color-orange);
 	}
 
-	.card-person__social-link[href]:not([href='']):not([href='/']):hover svg {
+	.card-person__social-link[href]:not([href='']):not([href='/']):hover svg,
+	.button-fire:hover {
 		scale: 1.05;
 	}
 
@@ -476,7 +543,8 @@ button {
 		color: var(--color-orange);
 	}
 
-	.card-person__social-link[href]:not([href='']):not([href='/']):active svg {
+	.card-person__social-link[href]:not([href='']):not([href='/']):active svg,
+	.button-fire:active {
 		scale: 1.05;
 	}
 
@@ -517,7 +585,7 @@ button {
 		row-gap: 63px;
 	}
 
-	.meet__description {
+	:is(.meet__description, .register-now__description) {
 		font-size: 20px;
 	}
 
@@ -552,6 +620,10 @@ button {
 
 	.countdown__value {
 		font-size: 70px;
+	}
+
+	.register-now__subtitle {
+		font-size: 24px;
 	}
 }
 
@@ -592,7 +664,7 @@ button {
 		row-gap: 29px;
 	}
 
-	.meet__description {
+	:is(.meet__description, .register-now__description) {
 		font-size: 16px;
 	}
 
@@ -620,16 +692,16 @@ button {
 		row-gap: 43px;
 	}
 
-	.description :is(h1, h2, h3, h4, h5, h6) {
+	.faq__body :is(h1, h2, h3, h4, h5, h6) {
 		margin-block: 68px 20px;
 		font-size: 20px;
 	}
 
-	.description :is(p, ul) {
+	.faq__body :is(p, ul) {
 		margin-block: 10px;
 	}
 
-	.description p {
+	.faq__body p {
 		font-size: 12px;
 	}
 
@@ -660,6 +732,22 @@ button {
 
 	.countdown__label {
 		font-size: 14px;
+	}
+
+	.register-now {
+		padding-block: 61px 47px;
+	}
+
+	.register-now__header {
+		row-gap: 24px;
+	}
+
+	.register-now__subtitle {
+		font-size: 20px;
+	}
+
+	.register-now__body {
+		row-gap: 41px;
 	}
 
 	.footer {
