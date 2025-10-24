@@ -485,6 +485,12 @@ button {
 	transition: color var(--transition-duration);
 }
 
+/* what-to-expect */
+
+.what-to-expect {
+	background-position: top -175px right;
+}
+
 /* register-now */
 
 .register-now {
