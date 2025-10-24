@@ -660,6 +660,10 @@ button {
 		background-position: bottom -140px center;
 	}
 
+	.what-to-expect {
+		background-position: bottom -340px center;
+	}
+
 	.meet__header {
 		row-gap: 29px;
 	}
