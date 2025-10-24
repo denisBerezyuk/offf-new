@@ -174,12 +174,12 @@ button {
 	justify-content: center;
 	width: 100%;
 	height: 51px;
-	padding-inline: 20px;
+	padding-inline: 29px;
 	background-color: var(--color-yellow);
 	font-family: var(--font-family-el-camino-soft-edges-caps);
 	font-size: 20px;
 	line-height: 1;
-	border-radius: 24px;
+	border-radius: 30px;
 }
 
 .button-fire > svg {
